@@ -18,7 +18,8 @@ RUN apk-install \
 	php-mysql \
 	php-pgsql \
 	php-redis@testing \
-	php-sqlite3
+	php-sqlite3 \
+	php-zlib \
 	
 # add an nginx user to avoid running as root
 RUN addgroup nginx www-data
