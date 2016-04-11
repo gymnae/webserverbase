@@ -35,6 +35,7 @@ RUN 	addgroup nginx www-data
 
 # copy the config
 COPY nginx.conf /etc/nginx/
+COPY php-fpm.conf /etc/php/php-fpm.conf
 
 EXPOSE 80 443 8080 4443
 	
