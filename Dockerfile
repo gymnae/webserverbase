@@ -29,9 +29,9 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
 # add an nginx user to avoid running as root
-RUN addgroup nginx www-data
-	&& chown -R nginx:www-data /var/www/localhost/htdocs
-	&& cmmod 755 /var/www/localhost/htdocs
+RUN 	addgroup nginx www-data \
+	&& chown -R nginx:www-data /var/www/localhost/htdocs \
+	&& cmmod 755 /var/www/localhost/htdocs 
 USER nginx
 
 # run nginx
