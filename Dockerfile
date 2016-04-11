@@ -30,6 +30,8 @@ RUN 	ln -sf /dev/stdout /var/log/nginx/access.log \
 RUN 	addgroup nginx www-data 
 #	&& mkdir -p /var/www/localhost/htdocs \
 #	&& chown -R nginx:www-data /var/www/localhost/htdocs
+
+EXPOSE 80 443 8080 4443
 	
 VOLUME ["/var/www/localhost/htdocs"]
 # run nginx
