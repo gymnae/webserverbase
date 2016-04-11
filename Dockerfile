@@ -22,17 +22,17 @@ RUN apk-install \
 	php-sqlite3 \
 	php-zlib 
 	
-VOLUME ["/var/www/localhost/htdocs"]
-
 # forward request and error logs to docker log collector
-RUN ln -sf /dev/stdout /var/log/nginx/access.log
-RUN ln -sf /dev/stderr /var/log/nginx/error.log
+RUN 	ln -sf /dev/stdout /var/log/nginx/access.log \
+	&& ln -sf /dev/stderr /var/log/nginx/error.log
 
 # add an nginx user to avoid running as root
-RUN 	addgroup nginx www-data \
-	&& chown -R nginx:www-data /var/www/localhost/htdocs \
+RUN 	addgroup nginx www-data
+RUN	&& chown -R nginx:www-data /var/www/localhost/htdocs \
 	&& chmod 755 /var/www/localhost/htdocs 
+
 USER nginx
+VOLUME ["/var/www/localhost/htdocs"]
 
 # run nginx
 CMD ["nginx", "-g", "daemon off;"]
