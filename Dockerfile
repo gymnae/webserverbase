@@ -16,6 +16,7 @@ RUN apk-install \
 	php-fpm \
 	php-gd \
 	php-mcrypt \
+	php-redis@testing \
 	php-mysql \
 	php-pgsql \
 	php-sqlite3 \
