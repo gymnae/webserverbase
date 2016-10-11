@@ -3,7 +3,7 @@
 # with redis client and php-fpm
 #
 
-FROM gymnae/alpine-base
+FROM gymnae/alpine-base:master
 MAINTAINER Gunnar Falk <docker@grundstil.de>
 
 # add packages
