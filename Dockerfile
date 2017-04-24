@@ -20,13 +20,16 @@ RUN apk-install \
 	php5-mysql \
 	php5-pgsql \
 	php5-sqlite3 \
-	php5-zlib 
+	php5-zlib \
+	nodejs \
+	nodejs-npm
 	
 # forward request and error logs to docker log collector
 RUN 	ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log \
 	&& mkdir -p /tmp/nginx \
-	&& chown nginx /tmp/nginx 
+	&& chown nginx /tmp/nginx \
+	&& npm install npm@latest -g
 
 # add an nginx user to avoid running as root and manage the mountpoint properly
 RUN 	addgroup nginx www-data 
