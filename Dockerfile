@@ -11,7 +11,7 @@ RUN apk-install \
 	php7-fpm@testing \
 	nginx \
 	php7-openssl@testing \ 
-	php7-cli@testing \
+	#php7-cli@testing \
 	php7-curl@testing \
 	php7-fpm@testing \
 	php7-gd@testing \
