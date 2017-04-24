@@ -8,19 +8,19 @@ MAINTAINER Gunnar Falk <docker@grundstil.de>
 
 # add packages
 RUN apk-install \
-	php5-fpm \
+	php7-fpm \
 	nginx \
-	php5-openssl \ 
-	php5-cli \
-	php5-curl \
-	php5-fpm \
-	php5-gd \
-	php5-mcrypt \
-	php5-redis@testing \
-	php5-mysql \
-	php5-pgsql \
-	php5-sqlite3 \
-	php5-zlib 
+	php7-openssl \ 
+	php7-cli \
+	php7-curl \
+	php7-fpm \
+	php7-gd \
+	php7-mcrypt \
+	php7-redis \
+	php7-mysql \
+	php7-pgsql \
+	php7-sqlite3 \
+	php7-zlib 
 	
 # forward request and error logs to docker log collector
 RUN 	ln -sf /dev/stdout /var/log/nginx/access.log \
