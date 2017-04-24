@@ -8,19 +8,19 @@ MAINTAINER Gunnar Falk <docker@grundstil.de>
 
 # add packages
 RUN apk-install \
-	php7-fpm \
+	php7-fpm@testing \
 	nginx \
-	php7-openssl \ 
-	php7-cli \
-	php7-curl \
-	php7-fpm \
-	php7-gd \
-	php7-mcrypt \
-	php7-redis \
-	php7-pdo_mysql \
-	php7-pgsql \
-	php7-sqlite3 \
-	php7-zlib \
+	php7-openssl@testing \ 
+	php7-cli@testing \
+	php7-curl@testing \
+	php7-fpm@testing \
+	php7-gd@testing \
+	php7-mcrypt@testing \
+	php7-redis@testing \
+	php7-pdo_mysql@testing \
+	php7-pgsql@testing \
+	php7-sqlite3@testing \
+	php7-zlib@testing \
 	nodejs \
 	nodejs-npm \
 	git
