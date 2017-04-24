@@ -22,15 +22,15 @@ RUN apk-install \
 	php5-sqlite3 \
 	php5-zlib \
 	nodejs \
-	nodejs-npm
+	nodejs-npm \
+	git
 	
 # forward request and error logs to docker log collector
 RUN 	ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log \
 	&& mkdir -p /tmp/nginx \
-	&& chown nginx /tmp/nginx \
-	&& npm install npm@latest -g
-
+	&& chown nginx /tmp/nginx
+	
 # add an nginx user to avoid running as root and manage the mountpoint properly
 RUN 	addgroup nginx www-data 
 #	&& mkdir -p /var/www/localhost/htdocs \
@@ -43,5 +43,9 @@ COPY php-fpm.conf /etc/php/php-fpm.conf
 EXPOSE 80 443 8080 4443
 	
 VOLUME ["/var/www/localhost/htdocs"]
+
+# update npm
+CMD npm install npm@latest -g
+
 # run nginx
 CMD /usr/bin/php-fpm ; /usr/sbin/nginx -g "daemon off;"
