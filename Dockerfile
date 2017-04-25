@@ -47,8 +47,5 @@ VOLUME ["/var/www/localhost/htdocs"]
 # update npm
 CMD npm install npm@latest -g
 
-# make sshd run at boot and start sshd
-CMD rc-update add sshd && /etc/init.d/sshd start
-
 # run nginx
-CMD /usr/bin/php-fpm ; /usr/sbin/nginx -g "daemon off;"
+CMD /usr/bin/php-fpm7 ; /usr/sbin/nginx -g "daemon off;"
