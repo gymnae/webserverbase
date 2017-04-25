@@ -10,7 +10,7 @@ MAINTAINER Gunnar Falk <docker@grundstil.de>
 RUN apk-install \
 	php7-fpm@testing \
 	nginx \
-	php7-openssl@testing \ 
+	php7-openssl@testing \
 	#php7-cli@testing \
 	php7-curl@testing \
 	php7-fpm@testing \
@@ -20,7 +20,7 @@ RUN apk-install \
 	php7-pdo_mysql@testing \
 	php7-pgsql@testing \
 	php7-sqlite3@testing \
-	php7-zlib@testing \
+	php7-zlib@testing
 	
 # forward request and error logs to docker log collector
 RUN 	ln -sf /dev/stdout /var/log/nginx/access.log \
