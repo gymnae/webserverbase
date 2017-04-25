@@ -38,9 +38,9 @@ RUN 	addgroup nginx www-data
 
 # copy the config
 COPY nginx.conf /etc/nginx/
-COPY php-fpm.conf /etc/php/php-fpm.conf
+COPY php-fpm.conf /etc/php7/php-fpm.conf
 
-EXPOSE 80 443 8080 4443 3000 22
+EXPOSE 80 443 8080 4443 3000 22 3001
 	
 VOLUME ["/var/www/localhost/htdocs"]
 
