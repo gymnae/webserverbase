@@ -23,6 +23,7 @@ RUN apk-install \
 	php7-zlib@testing \
 	nodejs \
 	nodejs-npm \
+	py3-flask \
 	git
 	
 # forward request and error logs to docker log collector
