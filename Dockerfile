@@ -20,7 +20,7 @@ php7-fpm@community \
 	php7-pdo_mysql@community \
 	php7-pgsql@community \
 	php7-sqlite3@community \
-	php7-zlib@community
+	php7-zlib@community \
 	vsftpd
 	
 # forward request and error logs to docker log collector
