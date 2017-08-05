@@ -10,6 +10,12 @@ MAINTAINER Gunnar Falk <docker@grundstil.de>
 RUN apk-install \
 	php7-fpm@community \
 	nginx \
+	nginx-mod-http-redis2 \
+	nginx-mod-http-upload-progress \
+	nginx-mod-http-geoip \
+	nginx-mod-http-cache-purge \
+	nginx-mod-http-fancyindex \
+	nginx-mod-rtmp \
 	php7-openssl@community \
 	#php7-cli@testing \
 	php7-curl@community \
