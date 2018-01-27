@@ -26,7 +26,7 @@ RUN apk-install \
 	php7-pdo_mysql@community \
 	php7-pgsql@community \
 	php7-sqlite3@community \
-	php7-zlib@community
+#	php7-zlib@community
 	
 # forward request and error logs to docker log collector
 RUN 	ln -sf /dev/stdout /var/log/nginx/access.log \
