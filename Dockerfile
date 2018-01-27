@@ -25,7 +25,7 @@ RUN apk-install \
 	php7-redis@community \
 	php7-pdo_mysql@community \
 	php7-pgsql@community \
-	php7-sqlite3@community \
+	php7-sqlite3@community 
 #	php7-zlib@community
 	
 # forward request and error logs to docker log collector
