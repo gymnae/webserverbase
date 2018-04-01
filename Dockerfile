@@ -21,7 +21,6 @@ RUN apk-install \
 	php7-curl@community \
 	php7-fpm@community \
 	php7-gd@community \
-	php7-mcrypt@community \
 	php7-redis@community \
 	php7-pdo_mysql@community \
 	php7-pgsql@community \
