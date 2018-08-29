@@ -6,6 +6,7 @@
 FROM gymnae/alpine-base:master
 MAINTAINER Gunnar Falk <docker@grundstil.de>
 
+# #
 # add packages
 RUN apk-install \
 	php7-fpm@community \
