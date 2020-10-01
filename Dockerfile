@@ -8,7 +8,7 @@ MAINTAINER Gunnar Falk <docker@grundstil.de>
 
 # #
 # add packages
-RUN apk-install \
+RUN apk add --no-cache \
 	php7-fpm@community \
 	nginx \
 	nginx-mod-http-redis2 \
