@@ -9,7 +9,7 @@ MAINTAINER Gunnar Falk <docker@grundstil.de>
 # #
 # add packages
 RUN apk add --no-cache \
-	php7-fpm@community \
+	php7-fpm \
 	nginx \
 	nginx-mod-http-redis2 \
 	nginx-mod-http-upload-progress \
@@ -17,16 +17,16 @@ RUN apk add --no-cache \
 	nginx-mod-http-cache-purge \
 	nginx-mod-http-fancyindex \
 	nginx-mod-rtmp \
-	php7-openssl@community \
+	php7-openssl \
 	#php7-cli@testing \
-	php7-curl@community \
-	php7-fpm@community \
-	php7-gd@community \
-	php7-redis@community \
-	php7-pdo_mysql@community \
-	php7-pgsql@community \
+	php7-curl \
+	php7-fpm \
+	php7-gd \
+	php7-redis \
+	php7-pdo_mysql \
+	php7-pgsql \
 	libmaxminddb \
-	php7-sqlite3@community 
+	php7-sqlite3 
 #	php7-zlib@community
 	
 # forward request and error logs to docker log collector
