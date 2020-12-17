@@ -10,13 +10,6 @@ MAINTAINER Gunnar Falk <docker@grundstil.de>
 # add packages
 RUN apk add --no-cache \
 	php7-fpm \
-	nginx \
-	nginx-mod-http-redis2 \
-	nginx-mod-http-upload-progress \
-	nginx-mod-http-geoip \
-	nginx-mod-http-cache-purge \
-	nginx-mod-http-fancyindex \
-	nginx-mod-rtmp \
 	php7-openssl \
 	#php7-cli@testing \
 	php7-curl \
@@ -26,14 +19,27 @@ RUN apk add --no-cache \
 	php7-pdo_mysql \
 	php7-pgsql \
 	libmaxminddb \
-	php7-sqlite3 
-#	php7-zlib@community
+	php7-sqlite3 \
+        php7-sodium\
+	php7-yaml  \
+        php7-session  \
+        php7-mbstring  \
+        php7-json \
+        php7-simplexml  \
+        php7-ctype  \
+        php7-dom  \
+        php7-xml  \
+        php7-zip \
+	php7-opcache \
+	php7-apcu \
+	php7-exif \
+	php7-zlib
 	
 # forward request and error logs to docker log collector
-RUN 	ln -sf /dev/stdout /var/log/nginx/access.log \
-	&& ln -sf /dev/stderr /var/log/nginx/error.log \
-	&& mkdir -p /tmp/nginx \
-	&& chown nginx /tmp/nginx 
+#RUN 	ln -sf /dev/stdout /var/log/nginx/access.log \
+#	&& ln -sf /dev/stderr /var/log/nginx/error.log 
+#	&& mkdir -p /tmp/nginx \
+#	&& chown nginx /tmp/nginx 
 
 # add an nginx user to avoid running as root and manage the mountpoint properly
 RUN 	addgroup nginx www-data 
@@ -41,11 +47,11 @@ RUN 	addgroup nginx www-data
 #	&& chown -R nginx:www-data /var/www/localhost/htdocs
 
 # copy the config
-COPY nginx.conf /etc/nginx/
+#COPY nginx.conf /etc/nginx/
 COPY php-fpm.conf /etc/php7/php-fpm.conf
 
 EXPOSE 80 443 8080 4443
 	
 VOLUME ["/var/www/localhost/htdocs"]
 # run nginx
-CMD /usr/sbin/php-fpm7 ; /usr/sbin/nginx -g "daemon off;"
+CMD /usr/sbin/php-fpm7
