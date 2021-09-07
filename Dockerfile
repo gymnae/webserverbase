@@ -9,7 +9,7 @@ MAINTAINER Gunnar Falk <docker@grundstil.de>
 # #
 # add packages
 RUN apk add --no-cache \
-	php7-fpm \
+	php8-fpm \
 	nginx \
 	nginx-mod-http-redis2 \
 	nginx-mod-http-upload-progress \
@@ -17,16 +17,15 @@ RUN apk add --no-cache \
 	nginx-mod-http-cache-purge \
 	nginx-mod-http-fancyindex \
 	nginx-mod-rtmp \
-	php7-openssl \
+	php8-openssl \
 	#php7-cli@testing \
-	php7-curl \
-	php7-fpm \
-	php7-gd \
-	php7-redis \
-	php7-pdo_mysql \
-	php7-pgsql \
+	php8-curl \
+	php8-gd \
+	php8-pecl-redis \
+	php8-pdo_mysql \
+	php8-pgsql \
 	libmaxminddb \
-	php7-sqlite3 
+	php8-sqlite3 
 #	php7-zlib@community
 	
 # forward request and error logs to docker log collector
@@ -48,4 +47,4 @@ EXPOSE 80 443 8080 4443
 	
 VOLUME ["/var/www/localhost/htdocs"]
 # run nginx
-CMD /usr/sbin/php-fpm7 ; /usr/sbin/nginx -g "daemon off;"
+CMD /usr/sbin/php-fpm8 ; /usr/sbin/nginx -g "daemon off;"
