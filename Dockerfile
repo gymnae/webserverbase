@@ -3,7 +3,7 @@
 # with redis client and php-fpm
 #
 
-FROM gymnae/alpine-base:master
+FROM gymnae/alpine-base:latest
 MAINTAINER Gunnar Falk <docker@grundstil.de>
 
 # #
