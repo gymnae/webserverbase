@@ -48,3 +48,4 @@ EXPOSE 80 443 8080 4443
 VOLUME ["/var/www/localhost/htdocs"]
 # run nginx
 CMD /usr/sbin/php-fpm8 ; /usr/sbin/nginx -g "daemon off;"
+USER nginx
