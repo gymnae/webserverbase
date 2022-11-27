@@ -9,7 +9,6 @@ MAINTAINER Gunnar Falk <docker@grundstil.de>
 # #
 # add packages
 RUN apk add --no-cache \
-	php8-fpm \
 	nginx \
 	nginx-mod-http-redis2 \
 	nginx-mod-http-upload-progress \
@@ -17,6 +16,7 @@ RUN apk add --no-cache \
 	nginx-mod-http-cache-purge \
 	nginx-mod-http-fancyindex \
 	nginx-mod-rtmp \
+	php81-fpm \
 	php81-openssl \
 	php81-curl \
 	php81-gd \
