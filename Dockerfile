@@ -17,16 +17,14 @@ RUN apk add --no-cache \
 	nginx-mod-http-cache-purge \
 	nginx-mod-http-fancyindex \
 	nginx-mod-rtmp \
-	php8-openssl \
-	#php7-cli@testing \
-	php8-curl \
-	php8-gd \
-	php8-pecl-redis \
-	php8-pdo_mysql \
-	php8-pgsql \
+	php81-openssl \
+	php81-curl \
+	php81-gd \
+	php81-pecl-redis \
+	php81-pdo_mysql \
+	php81-pgsql \
 	libmaxminddb \
-	php8-sqlite3 
-#	php7-zlib@community
+	php81-sqlite3 
 	
 # forward request and error logs to docker log collector
 RUN 	ln -sf /dev/stdout /var/log/nginx/access.log \
